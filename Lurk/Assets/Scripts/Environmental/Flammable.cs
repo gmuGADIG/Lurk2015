@@ -35,7 +35,7 @@ public class Flammable : MonoBehaviour {
 	 * 	what a good size is.
 	 */
 	void OnTriggerEnter2D(Collider2D col){
-		scratch_extinguish snuff = col.gameObject.GetComponentInChildren<scratch_extinguish> ();
+		Extinguish snuff = col.gameObject.GetComponentInChildren<Extinguish> ();
 		if(snuff && this.lit == true){
 			this.lit = false;
 			fireLight.enabled = false;
@@ -43,7 +43,7 @@ public class Flammable : MonoBehaviour {
 			return;
 		}
 
-		scratch_flammable lighter = col.gameObject.GetComponent<scratch_flammable>();
+		Flammable lighter = col.gameObject.GetComponent<Flammable>();
 		
 		if(lighter && lighter.lit == true && this.lit != true) {
 			this.lit = true;

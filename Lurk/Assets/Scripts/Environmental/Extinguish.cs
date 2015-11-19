@@ -16,7 +16,7 @@ public class Extinguish : MonoBehaviour {
 	 * 	Otherwise, there's not really anything to using it.
 	 */
 	void OnTriggerEnter2D(Collider2D col){
-		scratch_flammable lighter = col.gameObject.GetComponent<scratch_flammable>();
+		Flammable lighter = col.gameObject.GetComponent<Flammable>();
 		if(lighter && lighter.lit == true) {
 			lighter.lit = false;
 			return;
