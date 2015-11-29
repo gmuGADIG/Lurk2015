@@ -16,7 +16,6 @@ public class Interact : MonoBehaviour
     //interable object
     public GameObject icon;
 
-    //added by Ashley
     public GameObject display;
     //public Canvas canvas;
 
