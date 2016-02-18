@@ -65,7 +65,7 @@ public class Conversation : MonoBehaviour {
 			//disable the display and reset the remaining text to be the full
 			//interaction text and turn the icon back on
 			Close ();
-			GetComponent<Interact>().End();
+			//GetComponent<Interact>().End();
 		
 		} else {
 

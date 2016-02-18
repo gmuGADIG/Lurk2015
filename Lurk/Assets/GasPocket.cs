@@ -28,8 +28,8 @@ public class scratch_gas_pocket : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.GetComponent<scratch_flammable> ()) {
-			if (active && other.gameObject.GetComponent<scratch_flammable> ().lit) {
+		if (other.gameObject.GetComponent<Flammable> ()) {
+			if (active && other.gameObject.GetComponent<Flammable> ().lit) {
 				this.ignite ();
 				active = false;
 				last_detonation_time = Time.time;
