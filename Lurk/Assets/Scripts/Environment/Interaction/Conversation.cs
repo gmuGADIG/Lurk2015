@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 
+
+//THIS FILE DEPENDS ON INTERACT.CS
+
 public class Conversation : MonoBehaviour {
 
 	//The file with the conversation
@@ -43,6 +46,17 @@ public class Conversation : MonoBehaviour {
 		remaining = conversation.text;
 	}
 
+    public void interact()
+    {
+        if (!convoDisplay.activeSelf)
+        {
+            StartConvo();
+        }
+        else {
+            CycleConvo();
+        }
+    }
+
 	public void StartConvo(){
 
 		//parse the text and replace the necesary phrases
@@ -55,7 +69,7 @@ public class Conversation : MonoBehaviour {
 
 		//used for animation testing
 		talkSprite.SetInteger("Anim_State", 0);
-	}
+    }
 
 	public void CycleConvo(){
 
@@ -65,7 +79,7 @@ public class Conversation : MonoBehaviour {
 			//disable the display and reset the remaining text to be the full
 			//interaction text and turn the icon back on
 			Close ();
-			//GetComponent<Interact>().End();
+			GetComponent<Interact>().End();
 		
 		} else {
 
